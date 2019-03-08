@@ -308,8 +308,7 @@
                   <div class="form-group row">
                     <label class="col-sm-4 col-form-label text-md-right">หมวดหมู่</label>
                     <div class="col-sm-3">
-                      <select class="form-control form-control-sm" name="cat_id" 
-                        onChange="getServiceList(this.value);" required>
+                      <select class="form-control form-control-sm" name="cat_id" onChange="getServiceList(this.value);" required>
                         <option value="">--- เลือก หมวดหมู่ ---</option>
                         <?php
                           $result = getCategory();
@@ -326,8 +325,8 @@
                   <div class="form-group row">
                     <label class="col-sm-4 col-form-label text-md-right">บริการ</label>
                     <div class="col-sm-6">
-                      <select class="form-control form-control-sm" name="service_id" id="service_list"
-                        onChange="getBranch(this.value);" required>
+                      <!-- <select class="form-control form-control-sm" name="service_id" id="service_list" onChange="getBranch(this.value);" required> -->
+                      <select class="form-control form-control-sm" name="service_id" id="service_list" required>
                         <option value="">--- กรุณาเลือก บริการ ---</option>
                       </select>
                     </div>
@@ -373,8 +372,8 @@
 				  <div class="form-group row">
                     <label class="col-sm-4 col-form-label text-md-right">สาขา</label>
 					<div class="col-sm-4">
-                      <input type="text" class="form-control" readonly name="req_branch"
-                        value="<?php echo getUserBranch($_SESSION['user_code']); ?>">
+                      <input type="text" class="form-control" readonly name="req_branch" value="1">
+                      <input type="text" class="form-control" readonly name="branch_name" value="<?php echo getUserBranch($_SESSION['user_code']); ?>">
                     </div>
                   </div>
 				  <div class="form-group row">
@@ -512,6 +511,9 @@
 
             endif;
 
+            ///บรรทัดนี้ข้ามขั้นตอนการส่งเมล
+      alertMsg('success', 'แจ้งขอใช้บริการเรียบร้อยแล้วครับ', 'request.php');
+      die();        
             if($result){
               $stmt = getSystem();
               $row = $stmt->fetch();
@@ -614,10 +616,13 @@ $line_text = "
     </div>
   </div>
 
-  
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script> -->
   <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="public/js/main.min.js"></script>

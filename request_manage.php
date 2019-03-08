@@ -569,6 +569,9 @@ $row<?php
               $stmt = $dbcon->prepare($sql);
               $stmt->execute($data_picture);
             }
+///บรรทัดนี้ข้ามขั้นตอนการส่งเมล
+alertMsg('success', 'แจ้งขอใช้บริการเรียบร้อยแล้วครับ', 'request.php');
+die();
 
             if($req_status == 4){
               $stmt = getSystem();
@@ -694,9 +697,12 @@ $line_text = "
   </div>
 
   
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.th.min.js"></script>
   <script src="public/js/main.min.js"></script>

@@ -545,11 +545,7 @@
   function getUserBranch($code){
     global $dbcon;
     $data = [$code];
-    $sql = "SELECT * 
-		FROM ex_user  user 
-		INNER JOIN ex_branch bra
-      	ON user.bra_id = bra.bra_id 
-		WHERE user_code = ?";
+    $sql = "SELECT * FROM ex_user  user INNER JOIN ex_branch bra	ON user.bra_id = bra.bra_id WHERE user_code = ?";
     $stmt = $dbcon->prepare($sql);
     $stmt->execute($data);
     $row = $stmt->fetch();
