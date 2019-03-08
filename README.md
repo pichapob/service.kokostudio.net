@@ -1,4 +1,5 @@
 # service.kokostudio.net
+UPDATE JQUERY
 โปรแกรม eservice โดยคุณ @ɴäʍ` ขอบคุณสำหรับโปรแกรมดี ๆ ครับ
 -----
 update 28/2/2019
